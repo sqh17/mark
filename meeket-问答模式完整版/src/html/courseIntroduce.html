@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <title>码客</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/normaliz.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/courseIntroduce.css">
+</head>
+
+<body>
+    <div class="wrap course-introduce">
+        <div class="vedio-wrap">
+            <img src="../../static/img/icon-banner.png">
+        </div>
+        <div class="wrap-down">
+            <div class="introduce clearfix">
+                <h3>主讲人</h3>
+                <div class="main_header_left">
+                    <img src="../../static/img/icon-banner.png" alt="">
+                </div>
+                <div class="main_introduce_right">
+                    <p>主讲人信息，学历，教学经历，优秀直播老师，专业专心专注为您服务优秀是一种习惯，也是一种信仰。 主讲人信息，学历，教学经历，优秀直播老师，专业专心专 注为您服务优秀是一种习惯，也是一种信仰。主讲人信息，
+                    </p>
+                </div>
+            </div>
+            <div class="introduce clearfix" style="margin-bottom: .3rem;">
+                <h3>介绍</h3>
+                <div class="main_introduce_right pl15">
+                    教学经历，优秀直播老师，主讲人信息，学历，教学经历，优秀直播老师，主讲人信息，学历，教学经历，优秀直播老师，主讲人信息，学历，教学经历，优秀直播老师，
+                </div>
+            </div>
+        </div>
+        <div class="fixed-enter">
+            <span>233人&nbsp;已签入</span>
+            <span data-toggle="modal" data-target=".small-dialog">签入</span>
+        </div>
+    </div>
+    <!-- 签入1    -->
+    <div id="small_dialog" class="modal fade bd-example-modal-sm small-dialog" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm dialog">
+            <div class="modal-content" style="height:5.5rem;">
+                <div class="dialog-top">
+                    <img src="../../static/img/dao.png" alt="">
+                    <h3>签到</h3>
+                </div>
+                <form action="" class="dialog-form" id="dialog_form">
+                    <ul>
+                        <li>
+                            手机
+                            <input type="number" value="" maxlength="11" id="small_phone" oninput="this.value=this.value.replace(/[^0-9.]+/,'');">
+                            <span class="error nophone">请输入手机号</span>
+                            <span class="error phonetype">格式不正确</span>
+                        </li>
+                    </ul>
+                    <div class="submit-btn" id="small_sumbit">确认</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 签入2 -->
+    <div id="dialog" class="modal fade bd-example-modal-sm dialog" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm dialog">
+            <div class="modal-content">
+                <div class="dialog-top">
+                    <img src="../../static/img/dao.png" alt="">
+                    <h3>您未报名</h3>
+                    <p>补全信息报名签入</p>
+                </div>
+                <form action="" class="dialog-form" id="dialog_form">
+                    <ul>
+                        <li>
+                            姓名
+                            <input type="text" value="李晓晓" id="username">
+                            <span class="error">请输入名字</span>
+                        </li>
+                        <li>
+                            单位
+                            <input type="text" value="优一至简科技有限公司" id="workpalce">
+                        </li>
+                        <li>
+                            职位
+                            <input type="text" value="前端工程师" id="job">
+                        </li>
+                        <li>
+                            手机
+                            <input type="number" value="13839252501" maxlength="11" id="phone"  oninput="this.value=this.value.replace(/[^0-9.]+/,'');">
+                            <span class="error nophone">请输入手机号</span>
+                            <span class="error phonetype">格式不正确</span>
+                        </li>
+                        <li class="identifying">
+                            <span>验证码</span>
+                            <input type="text" maxlength="5">
+                            <button id="send_identifying">
+                               发送验证码
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="submit-btn" id="sumbit">确认</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../../static/js/jquery.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+        $(function () {
+            var reg = 11 && /^((13|14|15|17|18)[0-9]{1}\d{8})$/;
+
+            // 上部tabs选择
+            $('#nav_lis').on('click', 'li', function () {
+                $(this).addClass('is-select').siblings('li').removeClass('is-select')
+            })
+            // 介绍和目录切换
+            var total = 0 // 默认目录个数为0；
+            if (total === 0) {
+                $('#introduce_list').css('display', 'none');
+            } else {
+                $('#introduce_list').css('display', 'flex');
+                $('.introduce').height('calc(100vh - 1.03rem - .9rem - .8rem - 5.45rem - .75rem)')
+            }
+            $('#introduce_list').on('click', 'div', function () {
+                $(this).addClass('introduce-list-select').siblings('div').removeClass(
+                    'introduce-list-select');
+                if ($(this).hasClass('introduce-nav')) {
+                    $('.introduce').show();
+                } else {
+                    $('.introduce').hide();
+                }
+            })
+            // 弹窗
+            // 签到弹窗
+            $('#small_sumbit').on('click', function () {
+                if ($('#small_phone').val() == '') {
+                    $('#small_phone').siblings('.nophone').show();
+                } else {
+                    $('#small_phone').siblings('.nophone').hide();
+                }
+                if ($('#small_phone').val() !== '' && !reg.test($('#small_phone').val())) {
+                    $('#small_phone').siblings('.phonetype').show();
+                }
+                if ($('#small_phone').val() !== '' && reg.test($('#small_phone').val())) {
+                    $('#small_dialog').modal('hide')
+                    $('#dialog').modal('show')
+                }
+                // if ($('#yzm').val() == '') {
+                //     $('#send_identifying-01').siblings('.yzm').show();
+                // }
+            })
+            // input聚焦
+            $('.dialog-form').on('focus', 'input', function () {
+                $('#username').siblings('span').hide();
+                $('#phone').siblings('.nophone').hide();
+                $('#phone').siblings('.phonetype').hide();
+                $('#small_phone').siblings('.nophone').hide();
+                $('#small_phone').siblings('.phonetype').hide();
+            })
+            // 信息录入弹窗
+            $('#sumbit').on('click', function () {
+                if ($('#username').val() == '') {
+                    $('#username').siblings('span').show();
+                } else {
+                    $('#username').siblings('span').hide();
+                }
+                if ($('#phone').val() == '') {
+                    $('#phone').siblings('.nophone').show();
+                } else {
+                    $('#phone').siblings('.nophone').hide();
+                }
+                if ($('#phone').val() !== '' && !reg.test($('#phone').val())) {
+                    $('#phone').siblings('.phonetype').show();
+                } else {
+                    $('#phone').siblings('.phonetype').hide();
+                }
+                if ($('#username').val() !== '' && $('#phone').val() !== '' && reg.test($('#phone').val())) {
+                    $('#dialog').modal('hide');
+                    window.location.href='index.html';
+                }
+            })
+            var flag = 0;
+            $('#send_identifying').on('click', function () {
+                this.disabled= true;
+                var starting = 60;
+                var start1;
+                var that = this
+                var time = setInterval(function () {
+                    if (starting > 0) {
+                        
+                        starting--;
+                        start1 = starting > 10 ? starting:`0${starting}` 
+                        $(that).html(`${start1}后重新发送`);
+                        $(that).css('background','#95918f');
+
+                    } else if (starting === 0) {
+                        $(that).html(`发送验证码`);
+                        clearInterval(time);
+                        $(that).css('background','#ff5e3a');
+                        that.disabled = false;
+                    }
+                }, 1000)
+            })
+            
+            
+        })
+    </script>
+</body>
+
+</html>

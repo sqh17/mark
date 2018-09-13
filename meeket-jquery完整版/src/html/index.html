@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <title>码客</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/normaliz.css">
+    <link rel="stylesheet" href="../css/courseNavs.css">
+    <link rel="stylesheet" href="../css/courses.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <!-- 轮播图 -->
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="../../static/img/icon-banner.png" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="../../static/img/icon-banner.png" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="../../static/img/icon-banner.png" alt="Third slide">
+            </div>
+        </div>
+    </div>
+    <!-- 精品课程 -->
+    <div class="index-wrap">
+        <div class="index-wrap-title">
+            <i></i>
+            <span>精品课程</span>
+        </div>
+        <div class="index-wrap-con">
+            <div class="index-wrap-lis">
+                <div class="index-img">
+                    <img src="../../static/img/icon-banner.png">
+                    <i class="icon-free"></i>
+                </div>
+                <div class="index-words">
+                    <h3>前端开发介绍</h3>
+                    <div>
+                        <span>#设计</span>
+                        <span>#Adobe</span>
+                    </div>
+                </div>
+            </div>
+            <div class="index-wrap-lis">
+                <div class="index-img">
+                    <img src="../../static/img/icon-banner.png">
+                    <i class="icon-vip"></i>
+                </div>
+                <div class="index-words">
+                    <h3>了解入门摄影知识</h3>
+                    <div>
+                        <span>#Adobe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 热度直播 -->
+    <div class="index-wrap">
+        <div class="index-wrap-title">
+            <i></i>
+            <span>热度直播</span>
+        </div>
+        <div class="index-wrap-con">
+            <div class="index-wrap-lis">
+                <div class="index-img">
+                    <img src="../../static/img/icon-banner.png">
+                    <i class="icon-shop"></i>
+                </div>
+                <div class="index-words">
+                    <h3>前端开发介绍</h3>
+                    <div>
+                        <span>#设计</span>
+                        <span>#Adobe</span>
+                    </div>
+                </div>
+            </div>
+            <div class="index-wrap-lis">
+                <div class="index-img">
+                    <img src="../../static/img/icon-banner.png">
+                    <!-- <i class="icon-vip"></i> -->
+                </div>
+                <div class="index-words">
+                    <h3>了解入门摄影知识</h3>
+                    <div>
+                        <span>#Adobe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="fixed-bot">
+        <li>
+            <img src="../../static/img/home.png" class="home-icon fixed-icon-display">
+            <img src="../../static/img/home_act.png" class="home-icon">
+            <p class="fixed-bot-select">首页</p>
+        </li>
+        <li>
+            <img src="../../static/img/all.png" class="all-icon">
+            <img src="../../static/img/all_act.png" class="all-icon fixed-icon-display">
+            <p>全部课程</p>
+        </li>
+        <li>
+            <img src="../../static/img/course.png" class="course-icon">
+            <img src="../../static/img/course_act.png" class="course-icon fixed-icon-display">
+            <p>我的课程</p>
+        </li>
+        <li>
+            <img src="../../static/img/per.png" class="per-icon">
+            <img src="../../static/img/per_act.png" class="per-icon fixed-icon-display">
+            <p>个人中心</p>
+        </li>
+    </ul>
+    <script src="../../static/js/jquery.min.js"></script>
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/index.js"></script>
+    <script>
+        $(function () {
+            // 轮播图
+            let $carousels = $('#carouselExampleSlidesOnly');
+            console.log($carousels)
+            let start,
+                end; 
+            $carousels.on('touchstart', function (e) {
+                start = e.originalEvent.touches[0].clientX;
+
+            });
+            $carousels.on('touchmove', function (e) {
+                end = e.originalEvent.touches[0].clientX;
+            });
+            $carousels.on('touchend', function (e) {
+                var distance = Math.abs(start - end); 
+                if (distance > 30) {    
+                    $(this).carousel(start > end ? 'next' : 'prev'); 
+                }
+            })
+        })
+
+    </script>
+</body>
+
+</html>

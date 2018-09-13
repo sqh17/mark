@@ -1,0 +1,167 @@
+.mine-title{
+    height: 3.7rem;
+    background: url('../../static/img/red-bg.png') no-repeat;
+    background-size: contain;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 .2rem;
+    /* margin-top: -.23rem; */
+}
+.mine-title img{
+    width: 1.56rem;
+    height: 1.56rem;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 .2rem .2rem #d75439;
+}
+.mine-name{
+    color: #fff;
+    padding-left: .2rem;
+    /* flex: 6; */
+}
+.mine-name p{
+    font-size: .26rem;
+    color: #fed6d3
+}
+.mine-vip{
+    width: .22rem;
+    height: .22rem;
+    background: url('../../static/img/glod-VIP.png') no-repeat;
+    background-size: contain;
+    margin-left:.1rem;
+    display: inline-block;
+}
+.mine-arrow{
+    height: .48rem;
+    width: .48rem;
+    background:url('../../static/img/right-arrow.png') no-repeat;
+    background-size: contain;
+    margin-left:auto
+}
+
+
+/* 中间遮罩 */
+.mine-mask{
+    margin: 0 .2rem;
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    /* height: 1.6rem; */
+    justify-content: space-around;
+    position: relative;
+    margin-top: -.8rem;
+    /* border: 1px solid  */
+}
+.mine-mask li{
+    text-align: center;
+    position: relative;
+    width: 33.3%;
+}
+.mine-mask::before{
+    content: '';
+    display: block;
+    height:.83rem;
+    width:.2rem;
+    background: #fbf4f3;
+    position: absolute;
+    bottom: -0.23rem;
+    left: -0.2rem;
+
+}
+.mine-mask::after{
+    content: '';
+    display: block;
+    height:.83rem;
+    width:.2rem;
+    background: #fbf4f3;
+    position: absolute;
+    bottom: -.23rem;
+    right: -.2rem;
+
+}
+.mine-mask li:after{
+    display: block;
+    content: '';
+    height: .6rem;
+    width: .02rem;
+    background: #eae9e9;
+    position: absolute;
+    right: 0;
+    top: calc(50% - .6rem/2);
+}
+.mine-mask li:last-child:after{
+    display: none;
+}
+.mine-mask h2{
+    font-size: .48rem;
+    color:#ff5e3a;
+}
+.mine-mask p{
+    font-size: .2rem;
+    color: #95918f;
+    margin: -.1rem 0 .1rem 0;
+}
+
+/* 渐变线 */
+.mine-line{
+    height: .23rem;
+    width: 100%;
+    background: -webkit-linear-gradient(#fffefe, #fff2eb); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradientt(#fffefe, #fff2eb); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradientt(#fffefe, #fff2eb); /* Firefox 3.6 - 15 */
+    background: linear-gradientt(#fffefe, #fff2eb); /* 标准的语法 */
+}
+
+/* list */
+.mine-lis{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    
+}
+.mine-lis li{
+    height: 1rem;
+    line-height: 1rem;
+    padding: 0 .2rem;
+    border-bottom:1px solid #e4e4e4;
+    display: flex;
+    align-items: center;
+}
+.mine-lis li span{
+    padding-left: .2rem;
+}
+.mine-lis i.icon-inform{
+    height: .32rem;
+    width: .32rem;
+    background: url('../../static/img/account.png') no-repeat;
+    background-size: contain;
+}
+.mine-lis i.icon-order{
+    height: .32rem;
+    width: .32rem;
+    background: url('../../static/img/course_act.png') no-repeat;
+    background-size: contain;
+}
+.mine-lis i.icon-invoice{
+    height: .26rem;
+    width: .32rem;
+    background: url('../../static/img/invoice.png') no-repeat;
+    background-size: contain;
+}
+.mine-lis i.icon-address{
+    height: .32rem;
+    width: .32rem;
+    background: url('../../static/img/address.png') no-repeat;
+    background-size: contain;
+}
+.mine-lis i.mine-lis-arrow{
+    height: .24rem;
+    width: .14rem;
+    background: url('../../static/img/list-right-arrow.png') no-repeat;
+    background-size: contain;
+    margin-right: .15rem;
+    margin-left: auto;
+}

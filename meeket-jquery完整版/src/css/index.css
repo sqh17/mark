@@ -1,0 +1,62 @@
+/* 精品课程 */
+.index-wrap{
+    padding: .42rem .2rem 0 .2rem;
+}
+.index-wrap-title{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    /* font-size: .24rem; */
+}
+.index-wrap-title>i{
+    height: .26rem;
+    width: .06rem;
+    background: #ff5e3a;
+    margin-right: .1rem;
+}
+.index-wrap-con{
+    display: flex;
+    padding-top: .2rem;
+}
+.index-wrap-con .index-wrap-lis{
+    margin-right: .2rem;
+    flex: 1;
+    position: relative;
+}
+.index-wrap-con>.index-wrap-lis:last-child{
+    margin-right: 0;
+}
+.index-img img{
+    
+    width: 3.45rem;
+    height: 1.95rem;
+}
+.index-img i{
+    height: .3rem;
+    width: .91rem;
+    position: absolute;
+    right: 0;
+    top: .2rem;
+}
+.icon-free{
+    background: url('../../static/img/icon-free.png') no-repeat;
+    background-size: contain;
+}
+.icon-vip{
+    background: url('../../static/img/icon-vip.png') no-repeat;
+    background-size: contain;
+}
+.icon-shop{
+    background: url('../../static/img/icon-shop.png') no-repeat;
+    background-size: contain;
+}
+.index-words h3{
+   font-size: .28rem;
+   font-weight: 700;
+   line-height: 1;
+   margin: .18rem 0 .12rem 0;
+}
+.index-words>div{
+    font-size: .2rem;
+    color: #adaaa9;
+}

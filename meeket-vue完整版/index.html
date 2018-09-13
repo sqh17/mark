@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html id="html">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta content="yes" name="apple-touch-fullscreen">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <title>码客 </title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script type="text/javascript">
+    document.documentElement.style.fontSize = window.innerWidth / 375 * 50 + "px";
+
+    var body = document.getElementsByTagName("body")[0]
+    body.addEventListener('touchstart', function (e) {
+      var input = document.getElementsByTagName("input");
+      var textarea = document.getElementsByTagName("textarea");
+      if (e.target.nodeName != "INPUT" && e.target.nodeName != "TEXTAREA") {
+
+        for (var i = 0; i < input.length; i++) {
+          input[i].blur();
+        }
+        for (var i = 0; i < textarea.length; i++) {
+          textarea[i].blur();
+        }
+
+      };
+    });
+    /* document.documentElement.addEventListener('dblclick', function (e) {
+      e.preventDefault();
+    }); */
+  </script>
+</body>
+
+</html>
