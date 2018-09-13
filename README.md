@@ -7,5 +7,6 @@
     需要 下载依赖 
     * npm install
     * npm run dev
+    * npm run build （打包）
 ##### 2.jquery版本
     可以直接点击html页面打开。
